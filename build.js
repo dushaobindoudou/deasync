@@ -4,13 +4,15 @@ var cp = require('child_process'),
   fs = require('fs'),
   path = require('path');
 
+// 公司内部限制，必须使用16.14.0版本
+var fixedNodeVersion = '16.20.0';
 // Parse args
 var force = false,
   debug = false;
 var arch = process.arch,
   platform = process.platform,
-  nodeV = /[0-9]+\.[0-9]+/.exec(process.versions.node)[0],
-  nodeVM = /[0-9]+/.exec(process.versions.node)[0];
+  nodeV = /[0-9]+\.[0-9]+/.exec(fixedNodeVersion)[0],
+  nodeVM = /[0-9]+/.exec(fixedNodeVersion)[0];
 var args = process.argv.slice(2).filter(function (arg) {
   if (arg === '-f') {
     force = true;

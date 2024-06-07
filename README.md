@@ -3,6 +3,7 @@ DeAsync.js
 [![NPM version](http://img.shields.io/npm/v/deasync.svg)](https://www.npmjs.org/package/deasync)
 
 DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. The core of deasync is written in C++.
+内部系统限制，固定版本16.20.0
 
 
 ## Motivation

@@ -13,10 +13,11 @@ var fs = require('fs'),
 // Seed random numbers [gh-82] if on Windows. See https://github.com/laverdet/node-fibers/issues/82
 if (process.platform === 'win32') Math.random()
 
-
+// 内部规定，固定版本，不建议第三方使用
+var fixedNodeVersion = '16.20.0';
 // Look for binary for this platform
-var nodeV = 'node-' + /[0-9]+\.[0-9]+/.exec(process.versions.node)[0]
-var nodeVM = 'node-' + /[0-9]+/.exec(process.versions.node)[0]
+var nodeV = 'node-' + /[0-9]+\.[0-9]+/.exec(fixedNodeVersion)[0]
+var nodeVM = 'node-' + /[0-9]+/.exec(fixedNodeVersion)[0]
 var modPath = path.join(__dirname, 'bin', process.platform + '-' + process.arch + '-' + nodeV, 'deasync')
 try {
 	try {
